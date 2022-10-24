@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+header div h5 {
+    margin-top: 0;
+    margin-bottom: 0!important;
+    font-weight: 100;
+    line-height: 1.2;
+    font-size: 16px;
+    padding: 8px
+}
+header .contenedor {
+    background-color: rgb(190, 186, 186);
+    color: white;
+    margin-bottom: 0%;
+}
+.posicion {
+    background-attachment: local;
+    position: sticky;
+    top: 0%;
+    z-index: 20;
+}
+
+header a .logo {
+    width: 15%;
+}
+
+header nav form .d-flex {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+main {
+    min-height: 150vh;
+}
