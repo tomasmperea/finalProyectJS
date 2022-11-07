@@ -15,7 +15,7 @@ function iniciarSesion() {
     }
   }
 
-  alert("Welcome to King On " + user);
+  alert("Welcome " + user);
 }
 
 // simular selección de ítem
@@ -57,4 +57,23 @@ function aniadirCarrito() {
     }
   }
 
+// let seleccionUsuario
 
+// while (seleccionUsuario != 'samsung' && seleccionUsuario != 'samsung tv' && seleccionUsuario != 'lg' && seleccionUsuario != 'aorus') {
+//     seleccionUsuario = prompt('Valor incorrecto. Seleccione entre: Samsung, LG, Aorus').toLowerCase();
+//     switch (seleccionUsuario) {
+//         case 'samsung':
+//         case 'samsung tv':
+//             console.log('Usted compro un monitor Samsung');
+//             break;
+//         case 'lg':
+//             console.log('Usted compro un monitor LG');
+//             break;
+//         case 'aorus':
+//             console.log('Usted compro un monitor Aorus');
+//             break;
+//         default:
+//             console.log('Usted ingreso un valor incorrecto');
+//             break;
+//     }
+// }

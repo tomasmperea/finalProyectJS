@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -41,8 +41,8 @@
                 Colección
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Remeras</a></li>
-                <li><a class="dropdown-item" href="#">Medias</a></li>
+                <li><a class="dropdown-item" href="./remeras.html">Remeras</a></li>
+                <li><a class="dropdown-item" href="./medias.html">Medias</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
@@ -53,14 +53,14 @@
               <a class="nav-link" href="#">Sucursales</a>
             </li>
           </ul>
-          <form class="d-flex align-items-center" role="search">
+          <form class="d-flex align-items-center p-1" role="search">
             <div>
               <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z"
                   fill="currentColor" />
               </svg>
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg id="consultarCarrito" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M5.79166 2H1V4H4.2184L6.9872 16.6776H7V17H20V16.7519L22.1932 7.09095L22.5308 6H6.6552L6.08485 3.38852L5.79166 2ZM19.9869 8H7.092L8.62081 15H18.3978L19.9869 8Z"
                   fill="currentColor" />
@@ -72,7 +72,7 @@
                   fill="currentColor" />
               </svg>
             </div>
-            <button class="btn btn-outline-success" onclick="iniciarSesion();" type="submit">Iniciar sesión</button>
+            <button id="botonLogin" class="btn btn-outline-success"type="submit">Iniciar sesión</button>
           </form>
         </div>
       </div>
@@ -112,7 +112,6 @@
         <div class="card">
           <img class="textbanner-image-background lazyautosizes blur-up-big lazyloaded" src="//d3ugyf2ht6aenh.cloudfront.net/stores/188/770/themes/style/1-img-1449271045-1665576256-ad916af0e5ca5dbed59e53827e4a60211665576256-50-0.webp?864971423" data-srcset="//d3ugyf2ht6aenh.cloudfront.net/stores/188/770/themes/style/1-img-1449271045-1665576256-ad916af0e5ca5dbed59e53827e4a60211665576256-480-0.webp?864971423 480w, //d3ugyf2ht6aenh.cloudfront.net/stores/188/770/themes/style/1-img-1449271045-1665576256-ad916af0e5ca5dbed59e53827e4a60211665576256-640-0.webp?864971423 640w" data-sizes="auto" data-expand="-10" alt="REMERAS" sizes="395px" srcset="//d3ugyf2ht6aenh.cloudfront.net/stores/188/770/themes/style/1-img-1449271045-1665576256-ad916af0e5ca5dbed59e53827e4a60211665576256-480-0.webp?864971423 480w, //d3ugyf2ht6aenh.cloudfront.net/stores/188/770/themes/style/1-img-1449271045-1665576256-ad916af0e5ca5dbed59e53827e4a60211665576256-640-0.webp?864971423 640w">
           <div class="card-body">
-            <button class="p-1" onclick="aniadirCarrito();">COMPRAR</button>
             <h5>Lorem ipsum dolor sit amet.</h5>
             <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, dicta.</p>
             <a href="#">
@@ -137,37 +136,25 @@
 
     <div class="row m-2 text-center">
       <div>
-        <h1>Productos destacados</h1>
+        <h3>Productos destacados</h3>
       </div>
-      <div class="col-sm-6 p-3">
-        <div class="card">
-          <img src="">
-          <div class="card-body">
-            <h5>Lorem ipsum dolor sit amet.</h5>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, dicta.</p>
-            <a href="#">
+      <div id ="cardContainer1" class="col-sm-6">
+        
+      <!-- renderizad con JS -->
 
-            </a>
-          </div>
-        </div>
       </div>
-      <div class="col-sm-6 p-3">
-        <div class="card">
-          <img src="" alt="">
-          <div class="card-body">
-            <h5>Lorem ipsum dolor sit amet.</h5>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, dicta.</p>
-            <a href="#">
 
-            </a>
-          </div>
+      <div id ="cardContainer2" class="col-sm-6">
+        
+        <!-- renderizad con JS -->
+  
         </div>
-      </div>
+
     </div>
 
     <div class="container-fluid text-center">
-      <h1>ROPA SIN GENERO.</h1>
-      <h4>Diseñada para humanos</h4>
+      <h1 class="fs-1">ROPA SIN GENERO.</h1>
+      <h5>Diseñada para humanos</h5>
     </div>
     <br>
   </main>
@@ -219,7 +206,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
-  <script src="./js/index.js"></script>
+  
+    <script src="./js/data.js"></script>
+  <script src="./js/main.js"></script>
+
 </body>
 
 </html>

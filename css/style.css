@@ -6,6 +6,9 @@
 
 }
 
+body {
+    background-color: rgb(252, 247, 240);
+}
 header div h5 {
     margin-top: 0;
     margin-bottom: 0!important;
@@ -39,3 +42,4 @@ header nav form .d-flex {
 main {
     min-height: 150vh;
 }
+
