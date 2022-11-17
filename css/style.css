@@ -6,27 +6,55 @@
 
 }
 
-body {
-    background-color: rgb(252, 247, 240);
+
+main {
+    min-height: 150vh;
 }
+
+header nav div ul .nav-item:hover {
+    font-size: larger !important;
+}
+
+header nav div ul li .dropdown-menu .dropdown-item:hover {
+    font-size: larger !important;
+}
+
+header nav form div .btn-success {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #bebaba;
+    --bs-btn-border-color: rgb(0 0 0 / 8%);
+    --bs-btn-hover-color: #212529;
+    --bs-btn-hover-bg: #f8f9fa;
+    --bs-btn-hover-border-color: #212529;
+    --bs-btn-focus-shadow-rgb: 60, 153, 110;
+    --bs-btn-active-color: rgb(13, 11, 11);
+    --bs-btn-active-bg: #f8f9fa;
+    --bs-btn-active-border-color: #212529;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #212529;
+    --bs-btn-disabled-border-color: #212529;
+}
+
+header nav form div svg:hover {
+    width: 35px;
+    height: 35px;
+    color: #bebaba;
+}
+
 header div h5 {
     margin-top: 0;
-    margin-bottom: 0!important;
+    margin-bottom: 0 !important;
     font-weight: 100;
     line-height: 1.2;
     font-size: 16px;
     padding: 8px
 }
+
 header .contenedor {
-    background-color: rgb(190, 186, 186);
+    background-color: #bebaba;
     color: white;
     margin-bottom: 0%;
-}
-.posicion {
-    background-attachment: local;
-    position: sticky;
-    top: 0%;
-    z-index: 20;
 }
 
 header a .logo {
@@ -39,7 +67,56 @@ header nav form .d-flex {
     align-items: center;
 }
 
-main {
-    min-height: 150vh;
+.posicion {
+    background-attachment: local;
+    position: sticky;
+    top: 0%;
+    z-index: 20;
 }
 
+main .container {
+    background-color: #fff;
+}
+main div .forma {
+    border-radius: 50%;
+    width: 40vw;
+}
+
+main .contenedor-main {
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+main div .d-flex {
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+
+main div .color-artista-1 {
+    background-color: #e6e6e6;
+}
+
+main div .color-artista-2 {
+    background-color: #eceff2;
+}
+
+main div .color-artista-3 {
+    background-color: #e6e7e9;
+}
+
+footer div .contenedor {
+    background-color: #bebaba;
+    margin-bottom: 0%;
+    color: white!important;
+}
+
+footer .d-flex {
+    display: flex!important;
+    flex-direction: column;
+}
+
+main .color {
+    background-color: #f3f3f4;
+}
