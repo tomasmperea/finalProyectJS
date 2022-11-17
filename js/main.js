@@ -15,6 +15,8 @@ if (localStorage.getItem("carrito")) {
   carrito = []
 }
 
+// Pensando en un posible registro de usuarios queda esto comentado
+
 // if (localStorage.getItem("arrayUsuarios")) {
 //   arrayUsuarios = JSON.parse(localStorage.getItem("arrayUsuarios"))
 // } else {
@@ -23,9 +25,29 @@ if (localStorage.getItem("carrito")) {
 
 // console.log(arrayUsuarios);
 
+// Bienvenida de la página una vez que nos fuimos y volvemos o actualizamos la page
+
+const usuario = JSON.stringify(localStorage.getItem("user"))
+
+if (localStorage.getItem("user")) {
+  Swal.fire(
+    `Bienvenido de nuevo ${localStorage.getItem("user")}`
+  )
+
+} else {
+  Swal.fire(
+      'Bienvenido a King-On'
+    )
+}
+
+// Me falta entender como poder mostrar el carrito en un Swal o modal cuando vuelve el usuario a ingresar a la page
+
 console.log("El carrito contiene: ", carrito);
 
+
 // FUNCIONES
+
+// Renderiza todas las cards con los productos
 
 const renderizarProductos = () => {
   remeras.forEach(remera => {
@@ -103,9 +125,26 @@ const renderizarProductos = () => {
   })
 }
 
+// Agrega cada producto al carrito
+
 const agregarCarrito = (e) => {
   const idProducto = e.target.getAttribute("data-id");
   const idElegido = productos.find((producto) => producto.id === idProducto)
+  
+  Toastify({
+    text: "Añadido al carrito",
+    duration: 3000,
+    destination: "",
+    newWindow: true,
+    close: false,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "#bebaba",
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
 
   carrito.push(idElegido)
   localStorage.setItem("carrito", JSON.stringify(carrito))
@@ -113,14 +152,20 @@ const agregarCarrito = (e) => {
 
 }
 
-// puedo mejorar la seguridad del login ESTA ES LA VERSION QUE FUNCIONA
+// puedo mejorar la seguridad del login 
 
 const loginUser = () => { 
   const nombreUsuarioStorage = localStorage.getItem("user")
 
   if (nombreUsuarioStorage){
     botonLogin.innerText = "Cerrar sesión"
-    alert(`Bienvenido humano ${nombreUsuarioStorage}`)
+
+    // Swal.fire(
+    //   'Bienvenido'
+    // )
+
+    alert(`${nombreUsuarioStorage} ya has iniciado sesión :)`)
+
   } else {
     
     let user = prompt("Ingrese su usuario: ");
@@ -137,9 +182,17 @@ const loginUser = () => {
 
     localStorage.setItem("user", user)
     botonLogin.innerText = "Cerrar sesión"
+
+    // Swal.fire(
+    //   'Bienvenido'
+    // )
+
     alert(`Bienvenido humano ${user}`)
   }
+  
 }
+
+// Posibles ideas que quedan comentadas para que no se eliminen
 
 // const agregarUsuarios = (e) => {
 //   nombreUsuario = e.target.getAttribute("nombre");
@@ -178,8 +231,22 @@ const loginUser = () => {
 // }
 
 // const logoutUser = () => {
-//   localStorage.removeItem("usuario")
-//   alert(`Hasta la próxima ${usuario}! Esperamos verte de nuevo por aquí :)`)
+//   Swal.fire({
+//     title: 'Estás seguro que deseas cerrar la sesión?',
+//     showDenyButton: true,
+//     showCancelButton: true,
+//     confirmButtonText: 'Si, estoy seguro',
+//     denyButtonText: `Fue un error`,
+//   }).then((result) => {
+//     /* Read more about isConfirmed, isDenied below */
+//     if (result.isConfirmed) {
+//       botonLogin.innerText = "Iniciar sesión"
+//       localStorage.removeItem("user")
+//       Swal.fire('Hasta pronto!', '', 'success')
+//     } else if (result.isDenied) {
+//       Swal.fire('Nos alegramos que sigas en nuestro sitio', '', 'info')
+//     }
+//   })
 // }
 
 // LISTENERS
@@ -189,9 +256,26 @@ botonLogin.addEventListener("click", loginUser)
 consultarCarrito.addEventListener("click", () => {
   const totalCarrito = carrito.reduce((acumulador, carrito) => acumulador + carrito.precio, 0);
 
-alert("El valor total del carrito es: " + "$" + parseFloat(totalCarrito*1.21) + " IVA Final")
+  Toastify({
+    text: `El valor total del carrito es: $${parseFloat(totalCarrito*1.21)}`,
+    duration: 3000,
+    destination: "",
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "left", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "#a7ce96",
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
+
+// alert("El valor total del carrito es: " + "$" + parseFloat(totalCarrito*1.21) + " IVA Final")
 
 })
+
+// Necesito resolver como poder cerrar sesión también
 
 // botonLogin.addEventListener("click", logoutUser)
 
