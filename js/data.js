@@ -53,7 +53,9 @@ class Remeras {
     media1, media2, media3, media4
   ];
 
-  const productos = remeras.concat(medias)
+  // const productos = remeras.concat(medias)
+
+  let productos = [];
 
 
 

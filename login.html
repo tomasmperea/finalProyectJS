@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpg" href="./img/tiger.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/styleLogin.css">
+  <title> King On | Iniciar sesión </title>
+</head>
+
+<body>
+
+  <!-- Header -->
+
+  <header class="posicion">
+
+    <!-- Navbar + logo -->
+
+    <div class="container-fluid text-center contenedor">
+      <h5>Envíos gratis</h5>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid no-gutters">
+        <a class="navbar-brand" href="./index.html">
+          <img class="logo" src="./img/tiger.png" alt="Logo King On">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="./index.html" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Colección
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./index.html" href="#totoSanchez"> Toto Sanchez </a></li>
+                <li><a class="dropdown-item" href="./index.html" href="#fabaEspinoza"> Faba Espinoza </a></li>
+                <li><a class="dropdown-item" href="./index.html" href="#marianoCastiglioni"> Mariano Castigloni</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html" href="#destacados"> Destacados </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto"> Contacto </a>
+            </li>
+          </ul>
+          <form class="d-flex align-items-center p-1 justify-content-center" role="search">
+            <div>
+              <a href="./login.html" aria-label="Mi usuario">
+                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M270.93,299.51H177.07C80.3,299.51,1.58,378.23,1.58,475a34.75,34.75,0,0,0,34.71,34.71H411.71A34.75,34.75,0,0,0,446.42,475C446.42,378.23,367.7,299.51,270.93,299.51ZM56.84,455.94A121.88,121.88,0,0,1,177.07,353.28h93.86A121.88,121.88,0,0,1,391.15,455.94ZM224,259.42A128.7,128.7,0,0,0,352.56,130.86C352.56,60,294.89,2.29,224,2.29S95.44,60,95.44,130.86A128.7,128.7,0,0,0,224,259.42Zm0-203.36a74.8,74.8,0,1,1-74.79,74.8A74.88,74.88,0,0,1,224,56.06Z" transform="translate(-1.58 -2.29)"></path></svg>
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <div class="row justify-content-md-center p-4">
+
+      <div class="col-md-8">
+
+        <form id="login-form" action="" method="post" class="text-center p-2" data-store="account-login">
+
+          <div class="form-group text-center p-2">
+            <label class="form-label fs-5"></label>
+            <input id="usuario" type="text" for="text"class=" form-control js-account-input " autocorrect="off" autocapitalize="off" name="usuario" required="" placeholder="Usuario">
+          </div>
+
+          <div class="form-group text-center p-2">
+            <label class="form-label fs-5"></label>
+            <input id="password" type="password" for="password" class="js-password-input form-control js-account-input " autocorrect="off" autocapitalize="off" autocomplete="off" name="password" required="" placeholder="Contraseña">
+
+            <a aria-label="Ver contraseña" class="js-password-view btn form-toggle-eye">
+              <span class="js-eye-open" style="display: none;">
+                <svg class="icon-inline svg-icon-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <path d="M288 288a64 64 0 000-128c-1 0-1.88.24-2.85.29a47.5 47.5 0 01-60.86 60.86c0 1-.29 1.88-.29 2.85a64 64 0 0064 64zm284.52-46.6C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 000 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 000-29.19zM288 96a128 128 0 11-128 128A128.14 128.14 0 01288 96zm0 320c-107.36 0-205.46-61.31-256-160a294.78 294.78 0 01129.78-129.33C140.91 153.69 128 187.17 128 224a160 160 0 00320 0c0-36.83-12.91-70.31-33.78-97.33A294.78 294.78 0 01544 256c-50.53 98.69-148.64 160-256 160z">
+                  </path>
+                </svg> </span>
+              <span class="js-eye-closed" style="display: inline;">
+                <svg class="icon-inline svg-icon-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <path d="M637 485.25L23 1.75A8 8 0 0011.76 3l-10 12.51A8 8 0 003 26.75l614 483.5a8 8 0 0011.25-1.25l10-12.51a8 8 0 00-1.25-11.24zM320 96a128.14 128.14 0 01128 128c0 21.62-5.9 41.69-15.4 59.57l25.45 20C471.65 280.09 480 253.14 480 224c0-36.83-12.91-70.31-33.78-97.33A294.88 294.88 0 01576.05 256a299.73 299.73 0 01-67.77 87.16l25.32 19.94c28.47-26.28 52.87-57.26 70.93-92.51a32.35 32.35 0 000-29.19C550.3 135.59 442.94 64 320 64a311.23 311.23 0 00-130.12 28.43l45.77 36C258.24 108.52 287.56 96 320 96zm60.86 146.83A63.15 63.15 0 00320 160c-1 0-1.89.24-2.85.29a45.11 45.11 0 01-.24 32.19zm-217.62-49.16A154.29 154.29 0 00160 224a159.39 159.39 0 00226.27 145.29L356.69 346c-11.7 3.53-23.85 6-36.68 6A128.15 128.15 0 01192 224c0-2.44.59-4.72.72-7.12zM320 416c-107.36 0-205.47-61.31-256-160 17.43-34 41.09-62.72 68.31-86.72l-25.86-20.37c-28.48 26.28-52.87 57.25-70.93 92.5a32.35 32.35 0 000 29.19C89.71 376.41 197.07 448 320 448a311.25 311.25 0 00130.12-28.43l-29.25-23C389.06 408.84 355.15 416 320 416z">
+                  </path>
+                </svg> </span>
+            </a>
+            <div class="text-center">
+              <a href="#" class="btn-link btn-link-primary font-small mb-4 mt-3n">¿Olvidaste tu
+                contraseña?</a>
+            </div>
+          </div>
+
+          <a href="./index.html">
+            <input id="botonLogin" class="btn btn-success p-2 mt-4" type="submit" value="Iniciar sesión"></input>
+          </a>
+          
+        </form>
+      </div>
+    </div>
+
+    <section class="d-flex">
+      <div class="color d-block w-50  text-center p-2 mt-5">
+        <h1 class="fs-1">ROPA SIN GENERO</h1>
+        <p class="fs-5">Diseñada para humanos</p>
+      </div>
+      <div class="color d-block w-50  text-center p-2 mt-5">
+        <h1 class="fs-1">ROPA SIN GENERO</h1>
+        <p class="fs-5">Diseñada para humanos</p>
+      </div>
+      <div class="color d-block w-50  text-center p-2 mt-5">
+        <h1 class="fs-1">ROPA SIN GENERO</h1>
+        <p class="fs-5">Diseñada para humanos</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="contacto" class="container-fluid mt-2">
+      <div class="container-fluid">
+        <div class="row">
+          <section class="d-flex text-center">
+            <div class="col">
+              <h6>Ventas</h6>
+              <p>ventas@king-on.com</p>
+            </div>
+            <div class="col">
+              <h6>Atención al cliente</h6>
+              <p>sac@king-on.com</p>
+            </div>
+            <div class="col">
+              <h6>Trabajá con nosotros</h6>
+              <p>rrhh@king-on.com</p>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="text-center container mt-2">
+        <a href="https://www.instagram.com/" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12Z"
+            fill="pink" />
+          <path
+            d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+            fill="pink" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5 1C2.79086 1 1 2.79086 1 5V19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5ZM19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+            fill="pink" />
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"
+            fill="blue" />
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5 7H19C19.5523 7 20 7.44771 20 8V16C20 16.5523 19.5523 17 19 17H5C4.44772 17 4 16.5523 4 16V8C4 7.44772 4.44772 7 5 7ZM2 8C2 6.34315 3.34315 5 5 5H19C20.6569 5 22 6.34315 22 8V16C22 17.6569 20.6569 19 19 19H5C3.34315 19 2 17.6569 2 16V8ZM10 9L14 12L10 15V9Z"
+            fill="red" />
+        </svg>
+      </a>
+      </div>
+      <div class="mt-3">
+        <p class="text-center">Copyright King-On &copy; | Ropa para humanos. - 2022. Todos los derechos reservados.</p>
+        <p class="contenedor text-center text-muted p-2">Creado por Tomas Martinez Perea &copy;</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
+  <script src="./js/login.js"></script>
+
+</body>
+
+</html>

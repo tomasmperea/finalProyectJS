@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+header nav form div svg:hover {
+    width: 30px;
+    height: 30px;
+    color: #bebaba!important;
+}
+
+main {
+    min-height: 50vh!important;
+}
+
+div form .btn-success {
+    --bs-btn-color: #fff!important;
+    --bs-btn-bg: #bebaba!important;
+    --bs-btn-border-color: rgb(0 0 0 / 8%)!important;
+    --bs-btn-hover-color: #212529!important;
+    --bs-btn-hover-bg: #f8f9fa!important;
+    --bs-btn-hover-border-color: #212529!important;
+    --bs-btn-focus-shadow-rgb: 60, 153, 110!important;
+    --bs-btn-active-color: rgb(13, 11, 11)!important;
+    --bs-btn-active-bg: #f8f9fa!important;
+    --bs-btn-active-border-color: #212529!important;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125)!important;
+    --bs-btn-disabled-color: #fff!important;
+    --bs-btn-disabled-bg: #212529!important;
+    --bs-btn-disabled-border-color: #212529!important;
+}
