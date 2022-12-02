@@ -21,6 +21,7 @@ const Toast = Swal.mixin({
 
 // FUNCIONES
 
+// Valida las credenciales del login para que no se logueen +1 vez con el mismo user/pass
 
 function validarCredenciales (e) { 
   e.preventDefault();
@@ -45,14 +46,11 @@ function validarCredenciales (e) {
       onClick: function(){}
     }).showToast();
 
-    // botonLogin.value = "Cerrar sesión"
-
   } else {
    
     localStorage.setItem("user", usuario.value)
     localStorage.setItem("password", password.value)
 
-    // botonLogin.value = "Cerrar sesión"
     Toast.fire({
       title: `¡Bienvenido/a ${localStorage.getItem("user")}!`,
       icon: "success"
@@ -62,38 +60,9 @@ function validarCredenciales (e) {
 
 }
 
-// Idea sobre logout comentada
-
-// function validarCierreSesion (e) {
-//   e.preventDefault();
-//   if (botonLogin.value === "Cerrar sesion") {
-//     Swal.fire({
-//       title: 'Estás seguro que deseas cerrar la sesión?',
-//       showDenyButton: true,
-//       showCancelButton: true,
-//       confirmButtonText: 'Si, estoy seguro',
-//       denyButtonText: `Fue un error`,
-//     }).then((result) => {
-//       if (result.isConfirmed) {
-//         botonLogin.innerText = "Iniciar sesión"
-//         localStorage.removeItem("user")
-//         localStorage.removeItem("password")
-//         Swal.fire('Hasta pronto!', '', 'success')
-//       } else if (result.isDenied) {
-//         Swal.fire('Nos alegramos que sigas en nuestro sitio', '', 'info')
-//       }
-//     })
-//   }
-// }
-
 // LISTENERS
 
-// Necesito resolver como poder cerrar sesión también
-
 inicioSesion.addEventListener("submit", validarCredenciales)
-
-
-// botonLogin.addEventListener("click", validarCierreSesion)
 
 // EJECUCIONES
 

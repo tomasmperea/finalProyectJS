@@ -168,6 +168,10 @@ main div .color-artista-3 {
     background-color: #e6e7e9;
 }
 
+/* main #cardContainer .fotosProductos {
+    cursor: pointer;
+} */
+
 main .modalCarrito {
     width: 90vw;
     background-color: #e6e7e9;

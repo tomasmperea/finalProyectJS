@@ -2,9 +2,6 @@
 
 const cardContainer = document.querySelector("#cardContainer");
 
-// const darkButton = document.querySelector("#darkMode");
-// const lightButton = document.querySelector("#lightMode");
-
 // Capturando datos del archivo .Json y renderizándolo en el index como cards
 
 fetch("./js/json/data.json")
@@ -32,9 +29,9 @@ fetch("./js/json/data.json")
         precio.textContent = `$${producto.precio}`;
 
         nuevaCard.innerHTML = `
-      
+
           <img src= ${producto.foto} alt= ${producto.nombre}>
-          <a href="#">
+          <a href="${producto.foto}">
           </a>
       
       `;
@@ -45,6 +42,8 @@ fetch("./js/json/data.json")
         nuevaCard.append(cardBody);
         cardBody.append(aniadirCarrito);
       });
+
+      // BOTON AÑADIR CARRITO
 
       const buttonCarrito = document.querySelectorAll(".aniadirCarrito");
       buttonCarrito.forEach((button) => {
@@ -90,6 +89,7 @@ const Toast = Swal.mixin({
 // FUNCIONES
 
 // LISTENERS
+
 
 // EJECUTORES
 

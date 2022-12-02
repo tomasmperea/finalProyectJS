@@ -71,7 +71,6 @@ const renderizarCarrito = () => {
   modalCarrito.innerHTML = ``;
   modalCarrito.style.display = "block";
 
-
   // Header carrito
   const headerCarrito = document.createElement("div");
 
@@ -118,12 +117,16 @@ const renderizarCarrito = () => {
     bodyCarrito.append(cantidadItems);
     bodyCarrito.append(removerCantidad);
 
+    // Botones sumar/restar cantidades de ítem en carrito
+
     const removerItem = document.createElement("span");
     removerItem.classList.add("removerItem");
     removerItem.innerHTML = `
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M17 5V4C17 2.89543 16.1046 2 15 2H9C7.89543 2 7 2.89543 7 4V5H4C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H5V18C5 19.6569 6.34315 21 8 21H16C17.6569 21 19 19.6569 19 18V7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H17ZM15 4H9V5H15V4ZM17 7H7V18C7 18.5523 7.44772 19 8 19H16C16.5523 19 17 18.5523 17 18V7Z" fill="red" /><path d="M9 9H11V17H9V9Z" fill="red" /><path d="M13 9H15V17H13V9Z" fill="red" /></svg>
       `;
     bodyCarrito.append(removerItem);
+
+    // Botón tacho remover ítem de carrito
 
     removerItem.addEventListener("click", eliminarItem);
 
@@ -132,19 +135,20 @@ const renderizarCarrito = () => {
       localStorage.setItem("carrito", JSON.stringify(carrito));
       renderizarCarrito();
     });
+    
     removerCantidad.addEventListener("click", () => {
-      producto.cantidad--;
-      if(producto.cantidad === 0) {
-        eliminarItem();
+      if(producto.cantidad === 1) {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
         renderizarCarrito();
       } else {
+        producto.cantidad--;
         localStorage.setItem("carrito", JSON.stringify(carrito));
       renderizarCarrito();
       }
     });
   });
 
-  // Total carrito
+  // Valor total a pagar del carrito
 
   const totalCarrito = carrito.reduce(
     (acumulador, carrito) => acumulador + carrito.precio * carrito.cantidad,
@@ -164,16 +168,14 @@ const renderizarCarrito = () => {
     `;
   modalCarrito.append(footerCarrito);
 
-  // botonFinalizarCompra = document.createElement("button");
-  // botonFinalizarCompra.classList.add("finalizarCompra");
-  // botonFinalizarCompra.innerText = "Finalizar compra";
-
-  // footerCarrito.append(botonFinalizarCompra);
+  // Botón cerrar carrito
 
   const cerrarCarrito = document.querySelector("#cerrarCarrito");
   cerrarCarrito.addEventListener("click", () => {
     modalCarrito.style.display = "none";
   });
+
+  // Botón finalizar compra
 
   const finalizarCompra = document.querySelector("#finalizarCompra");
   finalizarCompra.addEventListener("click", () => {
@@ -187,17 +189,23 @@ const renderizarCarrito = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire('¡Su pedido se ha ingresado con éxito!', '', 'success')
+        localStorage.removeItem('carrito');
+        renderizarCarrito();
+        itemsCarritoNavBar();
       } else if (result.isDenied) {
         Swal.fire('Volviendo al carrito...', '', 'info')
       }
     })
+   
   });
 };
+
 
 // Eliminar ítem carrito
 
 const eliminarItem = () => {
   const idEliminar = carrito.find((producto) => producto.id);
+  console.log(idEliminar);
 
   carrito = carrito.filter((idCarrito) => {
     return idCarrito !== idEliminar;
@@ -207,7 +215,6 @@ const eliminarItem = () => {
   renderizarCarrito();
   itemsCarritoNavBar();
 };
-
 
 // Renderizar cantidad ítems carrito NavBar
 
